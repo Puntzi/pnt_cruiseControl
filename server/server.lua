@@ -1,7 +1,3 @@
-ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
 if Config.Speed == "km" then
     Config.Speed = 3.6
 else
