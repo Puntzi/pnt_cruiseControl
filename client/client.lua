@@ -19,7 +19,7 @@ if Config.Command then
 
         SetEntityMaxSpeed(vehicle, cruiserSpeed)
         cruiseEnabled = true
-        TriggerEvent('pnt_cruiseControl:Notify', string.format(Strings["cruiser_set_at"], cruiserNotification))
+        TriggerEvent('pnt_cruiseControl:Notify', string.format(Strings["cruiser_set_at"], cruiserNotification, Config.Speed))
     end)
 
     RegisterCommand(Config.OffCruiseCommand, function()
@@ -68,7 +68,7 @@ if Config.KeyMap then
             SetEntityMaxSpeed(vehicle, cruiserSpeed)
             cruiserNotification = math.floor(cruiserSpeed * 3.6 + 0.5)
             cruiseEnabled = true
-            TriggerEvent('pnt_cruiseControl:Notify', string.format(Strings["cruiser_set_at"], cruiserNotification))
+            TriggerEvent('pnt_cruiseControl:Notify', string.format(Strings["cruiser_set_at"], cruiserNotification, Config.Speed))
         else
             SetEntityMaxSpeed(vehicle, maxSpeed)
             cruiseEnabled = false
