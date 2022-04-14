@@ -1,6 +1,6 @@
 local cruiseEnabled = false
 
-if Config.Speed  = "km" then
+if Config.Speed  == "km" then
     speed = 3.6
 else
     speed = 2.237
