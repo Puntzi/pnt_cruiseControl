@@ -1,5 +1,11 @@
 local cruiseEnabled = false
 
+if Config.Speed  = "kmh" then
+    speed = 3.6
+else
+    speed = 2.237
+end
+
 if Config.Command then
     RegisterNetEvent('pnt_cruiseControl:cruiserCar')
     AddEventHandler('pnt_cruiseControl:cruiserCar', function(cruiserSpeed, cruiserNotification)
@@ -66,7 +72,7 @@ if Config.KeyMap then
 
         if not cruiseEnabled then
             SetEntityMaxSpeed(vehicle, cruiserSpeed)
-            cruiserNotification = math.floor(cruiserSpeed * 3.6 + 0.5)
+            cruiserNotification = math.floor(cruiserSpeed * speed + 0.5)
             cruiseEnabled = true
             TriggerEvent('pnt_cruiseControl:Notify', string.format(Strings["cruiser_set_at"], cruiserNotification, Config.Speed))
         else
